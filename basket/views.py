@@ -1,7 +1,8 @@
-from django.http.response import JsonResponse
-from django.shortcuts import get_object_or_404, render
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404, render
+
 from main_store.models import Product
+
 from .basket import Basket
 
 
@@ -20,5 +21,4 @@ def basket_add(request):
 
         basketqty = basket.__len__()
         response = JsonResponse({'qty': basketqty})
-
         return response

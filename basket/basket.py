@@ -1,18 +1,16 @@
-from main_store.models import Product
 from decimal import Decimal
+
+from main_store.models import Product
 
 
 class Basket():
-    """
-    A base Basket class, providing some default behaviors that
-    can be inherited or overrided, as necessary.
-    """
     def __init__(self, request):
         self.session = request.session
         basket = self.session.get('skey')
         if 'skey' not in request.session:
             basket = self.session['skey'] = {}
         self.basket = basket
+
 
     def add(self, product, qty):
         """
@@ -49,3 +47,7 @@ class Basket():
         Get the basket data and count the qty of items
         """
         return sum(item['qty'] for item in self.basket.values())
+
+    def save(self):
+        self.session.modified = True
+

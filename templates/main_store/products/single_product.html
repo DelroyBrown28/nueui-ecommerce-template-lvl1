@@ -36,9 +36,7 @@
                             </div>
                             <div class="col-6 text-end">
                                 <button type="button" id="add-button" value="{{product.id}}"
-                                    class="btn btn-secondary btn-sm">
-                                    Add to basket
-                                </button>
+                                    class="btn btn-secondary btn-sm">Add to basket</button>
                             </div>
                         </div>
                     </div>
@@ -52,7 +50,6 @@
 <script>
     $(document).on('click', '#add-button', function (e) {
         e.preventDefault();
-        console.log($('#select option:selected').text())
         $.ajax({
             type: 'POST',
             url: '{% url "basket:basket_add" %}',
@@ -69,4 +66,5 @@
         });
     })
 </script>
+
 {% endblock %}

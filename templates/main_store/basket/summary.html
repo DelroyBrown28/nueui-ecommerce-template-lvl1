@@ -1,15 +1,13 @@
-{% extends "main_store/base.html" %}
+{% extends "../base.html" %}
 {% load static %}
 {% block title %}Basket Summary{% endblock %}
-
 {% block content %}
 
 <main class="pt-5">
     <div class="container">
         <h1 class="h5">Shopping basket</h1>
         {% for item in basket %}
-        {% with product=item.product  %}
-          
+        {% with product=item.product %}
         <div data-index="{{product.id}}" class="row mb-4 border product-item">
             <div class="col-md-3 col-lg-2 order-md-first bg-light">
                 <img class="img-fluid mx-auto d-block" width="120px" alt="Responsive image"
@@ -107,4 +105,4 @@
     })
 </script>
 
-{% endblock content %}
+{% endblock %}
