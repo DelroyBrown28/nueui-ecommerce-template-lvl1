@@ -21,7 +21,7 @@
                     <div class="col border-bottom">
                         <div class="row p-3">
                             <div class="col-6">Hardback Book</div>
-                            <div class="col-6 text-end"><span class="h6 fw-bold">£{{ product.price }}</span></div>
+                            <div class="col-6 text-end"><span class="h6 fw-bold" id="product-price">£{{ product.price }}</span></div>
                         </div>
                     </div>
                     <div class="col">
@@ -68,7 +68,7 @@
         var prodid = $(this).data('index');
         $.ajax({
             type: 'POST',
-            url: '',
+            url: '{% url "basket:basket_delete" %}',
             data: {
                 productid: $(this).data('index'),
                 csrfmiddlewaretoken: "{{csrf_token}}",
@@ -89,7 +89,7 @@
         var prodid = $(this).data('index');
         $.ajax({
             type: 'POST',
-            url: '}',
+            url: '{% url "basket:basket_update" %}',
             data: {
                 productid: $(this).data('index'),
                 productqty: $('#select' + prodid + ' option:selected').text(),

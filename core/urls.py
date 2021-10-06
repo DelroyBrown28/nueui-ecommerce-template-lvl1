@@ -6,6 +6,8 @@ from django.conf.urls.static import static
 app_name = 'core'
 
 urlpatterns = [
+    # path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    # path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
     path('basket/', include('basket.urls', namespace='basket')),
     path('', include('main_store.urls', namespace='main_store')),
@@ -13,3 +15,4 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ 
