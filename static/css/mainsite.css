@@ -27,12 +27,11 @@ REPEATED STYLES
 .action-button-styles {
     border: none;
     color: #fff;
-    width: 200px;
-    padding: 10px;
     background-color: #909FA6;
     transition: 0.3s ease-in-out;
 
 }
+
 /* 
 ===========
 BASE STYLES
@@ -58,9 +57,16 @@ THE NAVBAR
 .navbar__basket-button {
     border: 1px solid #8086A6 !important;
     border-radius: 0px;
+    /* padding: 3px 50px; */
     text-transform: uppercase;
     transition: 0.3s ease-in-out;
+    width: 200px;
 
+}
+
+.navbar__go-back-icon {
+    height: 16px;
+    transition: 0.3s ease-in-out;
 }
 
 /* 
@@ -75,13 +81,14 @@ THE HOME PAGE
 
 .home-page__top-banner {
     background-color: #DFEDF2;
-    
+
 }
 
 .home-page__top-info-banner {
-    height:30px;
+    height: 30px;
     background-color: #909FA6;
 }
+
 .home-page__top-info-banner p {
     color: #FFF;
 }
@@ -121,13 +128,19 @@ THE NAVBAR
 
 .navbar-brand {
     color: #222 !important;
-    
+
 }
 
 .nav-link {
     color: #222 !important;
     font-weight: 600;
 }
+
+.main-nav__man-nav-logo {
+
+
+}
+
 /* 
 =======================
 THE SINGLE PRODUCT PAGE
@@ -140,9 +153,14 @@ THE SINGLE PRODUCT PAGE
     background-color: transparent;
 }
 
-.single-product__qtybasket-col {
-    
+.single-product__add-to-basket-btn {
+    width: 200px;
+    padding: 10px;
 }
+
+
+
+
 /* 
 ==============
 HOVERS & SUCH
@@ -151,4 +169,8 @@ HOVERS & SUCH
 
 .fade-hover:hover {
     opacity: 0.7;
+}
+
+.navbar__go-back-icon:hover {
+    transform: translateX(5px);
 }
