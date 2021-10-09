@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djrichtextfield',
     'main_store',
     'basket',
 ]
@@ -107,3 +108,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+DJRICHTEXTFIELD_CONFIG = {
+    'js': ['//cdn.tiny.cloud/1/ejfej7wzcg1hib8eew1onmh8d577qbpz8zcxwbb9ldzpk69m/tinymce/5/tinymce.min.js'],
+    'init_template': 'djrichtextfield/init/tinymce.js',
+    'settings': {
+        'menubar': False,
+        'plugins': 'link image textcolor',
+        'toolbar': 'bold italic | link image | removeformat | forecolor backcolor',
+        'width': 700
+    }
+}

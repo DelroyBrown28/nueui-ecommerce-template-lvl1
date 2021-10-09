@@ -1,4 +1,5 @@
 from django.db import models
+from djrichtextfield.models import RichTextField
 from django.contrib.auth.models import User
 from django.urls import reverse
 
@@ -29,7 +30,7 @@ class Product(models.Model):
         User, on_delete=models.CASCADE, related_name='product_creator')
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255, default='admin')
-    description = models.TextField(blank=True)
+    description = RichTextField(blank=True, null=True, max_length=1500, default='', field_settings={'bold': False})
     image = models.ImageField(upload_to='product_images/', default='product_images/default.webp')
     slug = models.SlugField(max_length=255)
     price = models.DecimalField(max_digits=4, decimal_places=2)

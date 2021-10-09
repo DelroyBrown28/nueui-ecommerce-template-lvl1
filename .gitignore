@@ -141,6 +141,8 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
+bootstrap.min.css
+
 # Pyre type checker
 .pyre/
 

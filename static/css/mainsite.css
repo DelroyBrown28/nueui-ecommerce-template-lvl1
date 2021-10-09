@@ -1,0 +1,121 @@
+/* 
+=======
+HELPERS
+=======
+*/
+
+.flexed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redborder {
+    border: 1px solid red;
+}
+
+.blueborder {
+    border: 1px solid blue;
+}
+
+/* 
+===========
+BASE STYLES
+===========
+*/
+* {
+    color: #222;
+}
+
+
+body,
+html {
+    background-color: #F1EFE9;
+}
+
+/* 
+==========
+THE NAVBAR
+==========
+*/
+
+.navbar__basket-button {
+    border: 1px solid #8086A6 !important;
+    border-radius: 0px;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+
+}
+
+/* 
+=============
+THE HOME PAGE
+=============
+*/
+
+.home-page__product-container {
+    background-color: #EBECF2;
+}
+
+.home-page__top-banner {
+    background-color: #DFEDF2;
+    
+}
+
+.home-page__top-info-banner {
+    height:30px;
+    background-color: #909FA6;
+}
+.home-page__top-info-banner p {
+    color: #FFF;
+}
+
+.home-page__product-card-col {
+
+    width: 328px;
+}
+
+.home-page__product-cards {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: transparent;
+    background-clip: border-box;
+    border-radius: 0px;
+    /* border: 1px solid #8086A6; */
+    border: none;
+    padding: 8px;
+}
+
+
+/* 
+==========
+THE NAVBAR
+==========
+*/
+
+.main-navbar {
+    background-color: #F1EFE9;
+    color: #222 !important;
+}
+
+.navbar-brand {
+    color: #222 !important;
+    
+}
+
+.nav-link {
+    color: #222 !important;
+    font-weight: 600;
+}
+/* 
+==============
+HOVERS & SUCH
+==============
+*/
+
+.navbar__basket-button:hover {
+    transform: scale(1.1);
+}
