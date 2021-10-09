@@ -19,6 +19,21 @@ HELPERS
 }
 
 /* 
+===============
+REPEATED STYLES
+===============
+*/
+
+.action-button-styles {
+    border: none;
+    color: #fff;
+    width: 200px;
+    padding: 10px;
+    background-color: #909FA6;
+    transition: 0.3s ease-in-out;
+
+}
+/* 
 ===========
 BASE STYLES
 ===========
@@ -26,6 +41,7 @@ BASE STYLES
 * {
     color: #222;
 }
+
 
 
 body,
@@ -99,6 +115,8 @@ THE NAVBAR
 .main-navbar {
     background-color: #F1EFE9;
     color: #222 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .navbar-brand {
@@ -111,11 +129,26 @@ THE NAVBAR
     font-weight: 600;
 }
 /* 
+=======================
+THE SINGLE PRODUCT PAGE
+=======================
+*/
+
+.single-product__quantity-box {
+    width: 50px;
+    border: none;
+    background-color: transparent;
+}
+
+.single-product__qtybasket-col {
+    
+}
+/* 
 ==============
 HOVERS & SUCH
 ==============
 */
 
-.navbar__basket-button:hover {
-    transform: scale(1.1);
+.fade-hover:hover {
+    opacity: 0.7;
 }
