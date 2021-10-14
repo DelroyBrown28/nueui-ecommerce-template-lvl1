@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from djrichtextfield.models import RichTextField
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -27,7 +28,7 @@ class Product(models.Model):
     category = models.ForeignKey(
         Category, related_name='product', on_delete=models.CASCADE)
     created_by = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='product_creator')
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='product_creator')
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255, default='admin')
     description = RichTextField(blank=True, null=True, max_length=1500, default='', field_settings={'bold': False})

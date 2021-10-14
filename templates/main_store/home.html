@@ -5,17 +5,13 @@
 
 
 <main>
-
-    
-        {% include 'includes/main_nav.html' %}
-
-
+    {% include 'includes/main_nav.html' %}
     <section class="py-5 text-center home-page__top-banner">
         <div class="row py-lg-2">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="h1 fw-bold">50% OFF MENSWEAR</h1>
                 <p class="lead text-muted">HURRY! OFFER ENDS AT MIDNIGHT.</p>
-               
+
             </div>
         </div>
     </section>
@@ -31,7 +27,8 @@
 
                 <div class="col home-page__product-card-col">
                     <div class="card home-page__product-cards">
-                        <img class="img-fluid home-page__product-card-image" alt="Responsive image" src="{{ product.image.url }}">
+                        <img class="img-fluid home-page__product-card-image" alt="Responsive image"
+                            src="{{ product.image.url }}">
                         <div class="card-body">
                             <p class="card-text">
                                 <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
@@ -51,8 +48,7 @@
             </div>
         </div>
     </div>
-
-
 </main>
+
 
 {% endblock %}
