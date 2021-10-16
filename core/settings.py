@@ -12,10 +12,10 @@ ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
-    #ADMIN STUFF
+    # ADMIN STUFF
     # 'jet.dashboard',
     # 'jet',
-    #DJANGO STUFF
+    # DJANGO STUFF
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,9 +122,11 @@ DJRICHTEXTFIELD_CONFIG = {
 }
 
 
-#Customer user model
+# Customer user model
 AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'
 LOGIN_URL = '/account/login/'
 
 PASSWORD_RESET_TIMEOUT_DAYS = 2
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
