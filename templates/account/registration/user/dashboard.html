@@ -1,4 +1,11 @@
-{% extends "../../main_.store/base.html" %} {% load static %} {% block title %}Basket Summary{%endblock %} {% block content %}
+{% extends "main_store/base.html" %}
+{% load static %}
+{% block title %}Basket Summary{%endblock %} 
+
+{% block content %}
+
+{% include "includes/main_nav.html" %}
+
 
 <main class="pt-5">
     <div class="container" style="max-width: 1000px">
@@ -7,7 +14,7 @@
         </div>
         <div class="col-12 d-flex justify-content-between">
             <div>Manage your <b>orders</b> and personal details</div>
-            <div><a href="{% url " account:edit_details" %}">Change Details</a></div>
+            <div><a href="">Change Details</a></div>
         </div>
         <hr />
     </div>
