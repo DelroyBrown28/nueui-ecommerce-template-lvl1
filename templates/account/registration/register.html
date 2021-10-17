@@ -25,8 +25,8 @@
                     <div class="row">
                         <div class="col-12 col-lg-7  mx-auto">
                             <form class="account-form p-4 rounded col-lg-6 mx-auto" action="." method="post">
-                                {% csrf_token %}
                                 <h3 class="mb-2 font-weight-bold">Create an account</h3>
+                                {% csrf_token %}
                                 <p class="mb-4">It's free and only takes a minute.</p>
 
                                 {% if form.errors %}
