@@ -18,6 +18,15 @@ HELPERS
     border: 1px solid blue;
 }
 
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 9999999;
+
+}
+
+
 /* 
 ===============
 REPEATED STYLES
@@ -301,6 +310,7 @@ THE SUMMARY PAGE
     padding: 10px 0px;
     text-decoration: none;
 }
+
 .summary__checkout-button {
     background-color: #9890A6;
 }

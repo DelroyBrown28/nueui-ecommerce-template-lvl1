@@ -59,7 +59,7 @@
                 </div>
             </a>
             {% else %}
-            <a type="button" role="button" href=""
+            <a type="button" role="button" href="{% url 'account:logout' %}"
                 class="btn btn-outline-secondary border-0 basket-btn">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
@@ -71,7 +71,7 @@
                 </div>
             </a>
             {% endif %}
-            <a type="button" role="button" href=""
+            <a type="button" role="button" href="{% url 'account:dashboard' %}"
                         class="btn btn-outline-secondary border-0 basket-btn">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
