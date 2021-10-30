@@ -61,6 +61,12 @@
                                 <button type="submit" role="button"
                                     class="btn btn-danger btn-block py-2 mb-4 mt-5 fw-bold w-100">Delete</button>
                             </form>
+                            <form class="account-form px-4" action="{% url 'account:pwdreset' %}" method="post">
+                                {% csrf_token %}
+                                <p>Forgotten your password?</p>
+                                <button type="submit" role="button"
+                                    class="btn btn-danger btn-block py-2 mb-4 mt-5 fw-bold w-100">Change Password</button>
+                            </form>
 
                         </div>
                     </div>
