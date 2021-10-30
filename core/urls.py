@@ -12,6 +12,7 @@ urlpatterns = [
     path('djrichtextfield/', include('djrichtextfield.urls')),
     path('basket/', include('basket.urls', namespace='basket')),
     path('account/', include('account.urls', namespace='account')),
+    path('payment/', include('payment.urls', namespace='payment')),
     path('', include('main_store.urls', namespace='main_store')),
 ]
 
