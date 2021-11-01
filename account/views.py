@@ -9,12 +9,13 @@ from django.utils.encoding import force_bytes, force_text
 from .tokens import account_activation_token
 from .forms import RegistrationForm, UserEditForm
 from .models import UserBase
+from orders.views import user_orders
 
 
 @login_required
 def dashboard(request):
-    # orders = user_orders(request)
-    return render(request, 'account/user/dashboard.html')
+    orders = user_orders(request)
+    return render(request, 'account/user/dashboard.html', {'orders':orders})
 
 
 @login_required

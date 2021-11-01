@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-&*#ek+(6yu9%)_243^674^mb%arns6p4675o399+aj(5*w^xdr
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'localhost', 'http://127.0.0.1:8000/']
 
 
 INSTALLED_APPS = [
@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'basket',
     'account',
     'payment',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -110,6 +111,9 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+# Basket session id
+BASKET_SESSION_ID = 'basket'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -134,3 +138,9 @@ LOGIN_URL = '/account/login/'
 PASSWORD_RESET_TIMEOUT_DAYS = 2
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+PUBLISHABLE_KEY = 'pk_test_51HX5u6A1fnSIB3Km43MupzPhDdzE3QyyAOUnwsbTnovphUUDBuyIEDZDXo3rNw5SQHBkDuqo3keliCWShvZ3PGdN00gKgCOG4V'
+SECRET_KEY = 'sk_test_51HX5u6A1fnSIB3Kmi9YWFTtgVrcE0bOv5zNYToTO4aAqCY4aYD6LPAhAwxvyGC7LIxYG5S402ylsKkrjWnonqmCH00Oq6E6YtR'
+STRIPE_ENDPOINT_SECRET = 'whsec_hORXdnsB5P7UFkIKg7rD8YT5ygafEc1c' 
+
