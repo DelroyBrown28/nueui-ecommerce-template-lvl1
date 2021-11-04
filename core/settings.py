@@ -1,12 +1,18 @@
 import os
+import environ
 from pathlib import Path
+
+env = environ.Env()
+environ.Env.read_env()
+
+
+DEBUG=True
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'django-insecure-&*#ek+(6yu9%)_243^674^mb%arns6p4675o399+aj(5*w^xdr'
+SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'localhost', 'http://127.0.0.1:8000/']
 

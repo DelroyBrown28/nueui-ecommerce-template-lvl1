@@ -1,4 +1,5 @@
 import stripe
+import environ
 import json
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
@@ -7,6 +8,8 @@ from django.http.response import HttpResponse
 from basket.basket import Basket
 from orders.views import payment_confirmation
 
+env = environ.Env()
+environ.Env.read_env()
 
 @login_required
 def BasketView(request):
@@ -15,7 +18,7 @@ def BasketView(request):
     total = total.replace('.', '')
     total = int(total)
 
-    stripe.api_key = 'sk_test_51HX5u6A1fnSIB3Kmi9YWFTtgVrcE0bOv5zNYToTO4aAqCY4aYD6LPAhAwxvyGC7LIxYG5S402ylsKkrjWnonqmCH00Oq6E6YtR'
+    stripe.api_key = env('STRIPE_SECRET_KEY')
     intent = stripe.PaymentIntent.create(
         amount=total,
         currency='gbp',
@@ -29,7 +32,6 @@ def BasketView(request):
 def stripe_webhook(request):
     payload = request.body
     event = None
-    print('Hello Delroy, You okay?')
 
     try:
         event = stripe.Event.construct_from(

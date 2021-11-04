@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- {% comment %} Look in to SEO {% endcomment %} -->
+{% block title %}NueStore{% endblock %}
+{% block content %}
+
+
+{% include 'includes/main_nav.html' %}
+<section class="py-5 text-center home-page__top-banner">
+    <div class="row py-lg-2">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="h1 fw-bold">50% OFF MENSWEAR</h1>
+            <p class="lead text-muted">HURRY! OFFER ENDS AT MIDNIGHT.</p>
+
+        </div>
+    </div>
+</section>
+
+
+<div class="album py-5 home-page__product-container">
+    <div class="container">
+
+        <div class="pb-3 h5">Newest Products.</div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+
+            {% if not products %}
+            <div class="col-12">There are currently no products available.</div>
+            {% else %}
+            {% for product in products %}
+
+            <div class="col home-page__product-card-col">
+                <div class="card home-page__product-cards">
+                    <img class="img-fluid home-page__product-card-image" alt="Responsive image"
+                        src="{{ product.image.url }}">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
+                                {{ product.title }}
+                            </a>
+                            <hr>
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">£{{ product.price }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+        {% endif %}
+    </div>
+</div>
+</main>
+
+{% endblock %}
