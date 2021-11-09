@@ -1,15 +1,18 @@
-from django.http import HttpResponse
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
 from django.contrib.sites.shortcuts import get_current_site
-from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import redirect, render
+from django.urls import reverse
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_text
-from .tokens import account_activation_token
-from .forms import RegistrationForm, UserEditForm
-from .models import UserBase
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+
 from orders.views import user_orders
+
+from .forms import RegistrationForm, UserEditForm
+from .models import Customer, Address
+from .tokens import account_activation_token
 
 
 @login_required
@@ -36,7 +39,7 @@ def edit_details(request):
 
 @login_required
 def delete_user(request):
-    user = UserBase.objects.get(user_name=request.user)
+    user = Customer.objects.get(user_name=request.user)
     user.is_active = False
     user.save()
     logout(request)
@@ -71,7 +74,7 @@ def account_register(request):
 def account_activate(request, uidb64, token):
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
-        user = UserBase.objects.get(pk=uid)
+        user = Customer.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, user.DoesNotExist):
         user = None
     if user is not None and account_activation_token.check_token(user, token):

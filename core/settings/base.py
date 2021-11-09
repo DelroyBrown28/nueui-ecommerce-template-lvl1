@@ -8,7 +8,7 @@ environ.Env.read_env()
 
 DEBUG=True
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 SECRET_KEY = env('SECRET_KEY')
@@ -31,9 +31,11 @@ INSTALLED_APPS = [
     'djrichtextfield',
     'main_store',
     'basket',
-    'account',
     'payment',
+    'account',
     'orders',
+    'mptt',
+    'core'
 ]
 
 MIDDLEWARE = [
@@ -137,7 +139,7 @@ DJRICHTEXTFIELD_CONFIG = {
 
 
 # Customer user model
-AUTH_USER_MODEL = 'account.UserBase'
+AUTH_USER_MODEL = 'account.Customer'
 LOGIN_REDIRECT_URL = '/account/dashboard'
 LOGIN_URL = '/account/login/'
 
