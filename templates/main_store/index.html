@@ -46,7 +46,7 @@
     <div class="col-12">There are currently no products available.</div>
     {% else %}
 
-    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 home-page__product-card">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 my-3 home-page__product-card">
         {% for image in product.product_image.all %}
         {% if image.is_feature %}
         <img class="img-fluid w-100 shadow-1-strong mb-2" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}">
