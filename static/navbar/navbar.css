@@ -1,0 +1,25 @@
+.main-nav__main-nav {
+    position: absolute;
+    min-height: 65px;
+    width: 100%;
+    background-color: transparent;
+    /* backdrop-filter: blur(10px); */
+    color: #fff;
+
+}
+
+
+.main-nav__text {
+    color: #000 !important;
+}
+
+.main-nav__text-alt {
+    color: #FFF;
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+.main-nav__logo {
+    height: 150px;
+    width: 150px;
+}

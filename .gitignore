@@ -143,6 +143,8 @@ dmypy.json
 
 stripe.txt
 
+bootstrap.css
+
 bootstrap.min.css
 
 # Pyre type checker

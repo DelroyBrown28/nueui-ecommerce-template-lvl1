@@ -72,7 +72,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 DATABASES = {
     'default': {

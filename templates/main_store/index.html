@@ -2,65 +2,78 @@
 {% load static %}
 <!-- {% comment %} Look in to SEO {% endcomment %} -->
 {% block title %}NueStore{% endblock %}
-{% block content %}
 
+
+
+{% block content %}
+<style>
+    .home-page__top-banner {
+        background: url(/media/home_page_images/bg.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
 
 {% include 'includes/main_nav.html' %}
-<section class="py-5 text-center home-page__top-banner">
-    <div class="row py-lg-2">
-        <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="h1 fw-bold">50% OFF MENSWEAR</h1>
-            <p class="lead text-muted">HURRY! OFFER ENDS AT MIDNIGHT.</p>
+<section class="text-center home-page__top-banner flexed">
+    <div class="row home-page__top-banner-contents">
+        <div class="col-md-12">
+            <p class="home-page__top-banner-text">The best free stock photos, royalty free images & videos shared by
+                creators.</p>
+        </div>
+        <div class="home-page__search-form flexed">
+            <input type="search" id="form1" class="form-control home-page__search-input" />
+            <button type="button" class="home-page__search-button">
+                <i data-feather="search"></i>
 
+            </button>
         </div>
     </div>
 </section>
 
 
-<div class="album py-5 home-page__product-container">
-    <div class="container">
-
-        <div class="pb-3 h5">Newest Products.</div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-
-            {% if not products %}
-            <div class="col-12">There are currently no products available.</div>
-            {% else %}
-            {% for product in products %}
-
-            <div class="col home-page__product-card-col">
-                <div class="card home-page__product-cards">
-
-                    {% for image in product.product_image.all %}
-                    {% if image.is_feature %}
-                    <img class="img-fluid" src="{{ image.image.url }}"
-                        alt="{{ image.image.alt_text }}">
-                    {% endif %}
-
-                    {% endfor %}
 
 
-             
-                    <div class="card-body">
-                        <p class="card-text">
-                            <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
-                                {{ product.title }}
-                            </a>
-                            <hr>
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-muted">£{{ product.regular_price }}</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- Gallery -->
 
-            {% endfor %}
+
+<div class="row my-5 mx-2">
+    <h5>LATEST EVENTS</h5>
+    <hr>
+    {% for product in products %}
+
+    {% if not products %}
+    <div class="col-12">There are currently no products available.</div>
+    {% else %}
+
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 home-page__product-card">
+        {% for image in product.product_image.all %}
+        {% if image.is_feature %}
+        <img class="img-fluid w-100 shadow-1-strong mb-2" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}">
+        {% endif %}
+        {% endfor %}
+        <div class="card-body home-page__card-body">
+            <p class="card-text">
+                <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
+                    {{ product.title }}
+                </a>
+            </p>
 
         </div>
-        {% endif %}
     </div>
+
+
+
+
+
+    {% endif %}
+    {% endfor %}
+
 </div>
+<!-- Gallery -->
 </main>
 
+<script>
+        feather.replace()
+</script>
 {% endblock %}

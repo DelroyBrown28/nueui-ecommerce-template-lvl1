@@ -10,6 +10,7 @@ HELPERS
     justify-content: center;
 }
 
+
 .redborder {
     border: 1px solid red;
 }
@@ -63,7 +64,7 @@ BASE STYLES
 
 body,
 html {
-    background-color: #F1EFE9;
+    height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -97,6 +98,18 @@ THE HOME PAGE
 =============
 */
 
+.home-page__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 15px;
+}
+
+.home-page__container img {
+    width: 100%;
+    display: block;
+}
+
 .home-page__product-container {
     background-color: #EBECF2;
 }
@@ -104,7 +117,44 @@ THE HOME PAGE
 
 .home-page__top-banner {
     background-color: #DFEDF2;
+    height: 50vh;
+    flex-flow: column;
 
+
+}
+
+.home-page__top-banner-contents {
+    max-width: 50%;
+    text-align: left;
+}
+
+.home-page__top-banner-text {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.home-page__search-form {
+    width: 100%;
+}
+
+.home-page__search-input {
+    border-radius: 0;
+}
+
+.home-page__search-button {
+    height: 38px;
+    width: 38px;
+    border: none;
+    background-color: transparent;
+}
+
+.home-page__top-image {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .home-page__top-info-banner {
@@ -118,21 +168,15 @@ THE HOME PAGE
 
 .home-page__product-card-col {
 
-    width: 328px;
+    width: 33.33%;
 }
 
-.home-page__product-cards {
+/* .home-page__product-card {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: transparent;
-    background-clip: border-box;
-    border-radius: 0px;
-    /* border: 1px solid #8086A6; */
-    border: none;
-    padding: 8px;
+} */
+
+.home-page__card-body {
+    padding: 0;
 }
 
 
