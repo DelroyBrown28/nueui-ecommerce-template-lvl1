@@ -10,7 +10,7 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 from orders.views import user_orders
 
-from .forms import RegistrationForm, UserEditForm
+from .forms import RegistrationForm, UserEditForm, UserAddressForm
 from .models import Customer, Address
 from .tokens import account_activation_token
 
@@ -86,8 +86,21 @@ def account_activate(request, uidb64, token):
         return render(request, 'account/registration/activation_invalid.html')
 
 
-
 @login_required
 def view_address(request):
-    adresses = Address.objects.filter(customer=request.user)
-    
+    addresses = Address.objects.filter(customer=request.user)
+    return render(request, 'account/dashboard/addresses.html', {"addresses": addresses})
+
+
+@login_required
+def add_address(request):
+    if request.method == "POST":
+        address_form = UserAddressForm(data=request.POST)
+        if address_form.is_valid():
+            address_form = address_form.save(commit=False)
+            address_form.customer = request.user
+            address_form.save()
+            return HttpResponseRedirect(reverse("account:addresses"))
+    else:
+        address_form = UserAddressForm()
+    return render(request, "account/dashboard/edit_addresses.html", {"form": address_form})

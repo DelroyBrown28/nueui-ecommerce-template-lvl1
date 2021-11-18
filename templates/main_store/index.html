@@ -49,12 +49,14 @@
     <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 my-3 home-page__product-card">
         {% for image in product.product_image.all %}
         {% if image.is_feature %}
-        <img class="img-fluid w-100 shadow-1-strong mb-2" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}">
+        <a href="{{ product.get_absolute_url }}">
+            <img class="img-fluid w-100 shadow-1-strong mb-2" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}">
+        </a>
         {% endif %}
         {% endfor %}
         <div class="card-body home-page__card-body">
             <p class="card-text">
-                <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
+                <a class="text-dark text-decoration-none" href="">
                     {{ product.title }}
                 </a>
             </p>
