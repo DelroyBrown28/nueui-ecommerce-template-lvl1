@@ -64,6 +64,7 @@ BASE STYLES
 
 body,
 html {
+    padding: 0 !important;
     height: 100%;
 }
 
@@ -313,6 +314,20 @@ THE SINGLE PRODUCT PAGE
 }
 
 
+.single-product__buy-collection-btn {
+    border: 1px solid #000;
+    border-radius: 0px;
+    transition: 0.3s ease-in-out;
+}
+.single-product__buy-collection-btn:hover {
+    opacity: 0.3px;
+}
+
+.single-product__quantity-select {
+    border: none;
+    background-color: transparent;
+}
+
 
 
 /* 
@@ -320,6 +335,12 @@ THE SINGLE PRODUCT PAGE
 THE FOOTER
 ==========
 */
+
+.footer__footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
 
 a {
     color: #6c757d;
@@ -446,17 +467,30 @@ THE SUMMARY PAGE
     text-decoration: none;
 }
 
-.summary__checkout-button {
-    background-color: #9890A6;
+.summary__total-price-banner {
+    text-align: left;
 }
+
+.summary__checkout-btn {
+    border: 1px solid black !important;
+}
+
+/* [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    border: 1px solid #000;
+    padding: 0.375rem 0.75rem;
+} */
 
 .update-button,
 .delete-button {
     padding: 7px 18px;
+    background-color: black;
+    color: white;
 }
 
 .delete-button {
-    background-color: red;
+    background-color: transparent;
+    color: #000;
+    border: 1px solid black;
 }
 
 

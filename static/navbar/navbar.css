@@ -5,6 +5,16 @@
     background-color: transparent;
     /* backdrop-filter: blur(10px); */
     color: #fff;
+    
+}
+
+.main-nav-relative__main-nav {
+    position: relative;
+    min-height: 65px;
+    width: 100%;
+    background-color: transparent;
+    /* backdrop-filter: blur(10px); */
+    color: #fff;
 
 }
 
