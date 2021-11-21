@@ -34,10 +34,50 @@
 
 
 
+<div class="container home-page__categories-section">
+    <div class="container">
+        <!-- <div class="my-5" style="max-width: 1000px">
+          <div class="col-12">
+            <h1 class="h2">{{ category.name|title }}</h1>
+          </div>
+            <div><b>Popular</b> products purchased</div>
+          <hr />
+        </div> -->
+        <div class="">
+            <div class="row">
+                <div class="album">
+                    {% if not products %}
+                    <div class="col-12">There are currently no products active <a
+                            href="{% url 'main_store:store_home' %}">Home</a></div>
+                    {% else %}
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+                        <div class="col">
+                            <div class="card border-0">
+
+                                {% for c in categories %}
+                                <div class="card-body px-0">
+                                    <p class="home-page__category-tags flexed">
+                                        <a class="text-decoration-none" href="{{ c.get_absolute_url }}">
+                                            {{ c.name}}
+                                        </a>
+
+                                    </p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Gallery -->
 
 
-<div class="row my-5 mx-2 container">
+<div class="row my-5 mx-2">
     <h5>LATEST EVENTS</h5>
     <hr>
     {% for product in products %}
@@ -46,11 +86,12 @@
     <div class="col-12">There are currently no products available.</div>
     {% else %}
 
-    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 my-3 home-page__product-card">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 my-3 container-fluid home-page__product-card">
         {% for image in product.product_image.all %}
         {% if image.is_feature %}
         <a href="{{ product.get_absolute_url }}">
-            <img class="img-fluid w-100 shadow-1-strong mb-2" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}">
+            <img class="img-fluid w-100 shadow-1-strong mb-2" src="{{ image.image.url }}"
+                alt="{{ image.image.alt_text }}">
         </a>
         {% endif %}
         {% endfor %}
@@ -64,10 +105,6 @@
         </div>
     </div>
 
-
-
-
-
     {% endif %}
     {% endfor %}
 
@@ -76,6 +113,6 @@
 </main>
 
 <script>
-        feather.replace()
+    feather.replace()
 </script>
 {% endblock %}

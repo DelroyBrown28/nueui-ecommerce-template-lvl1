@@ -19,7 +19,7 @@
                         </li>
                         {% endfor %}
             </ul>
-         <a type="button" role="button" href="{% url 'basket:basket_summary' %}"
+         {% comment %} <a type="button" role="button" href="{% url 'basket:basket_summary' %}"
                 class="btn navbar__basket-button fade-hover">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -40,7 +40,7 @@
                 {% endwith %}
 
 
-            </a>
+            </a> {% endcomment %}
         </div>
     </div>
 </nav>
