@@ -24,7 +24,6 @@
             <div class="d-flex d-flex-inline justify-content-between">
                 <div>
                     <span class="h3">£{{ product.regular_price }}</span>
-                    <p class="text-muted">Contact us for individual images.</p>
                 </div>
                 <div>
                     <label for="select">Quantity: </label>
@@ -37,7 +36,7 @@
                 </div>
             </div>
             <button type="button" id="add-button" value="{{product.id}}"
-                class="btn single-product__buy-collection-btn fw500">Buy Collection</button>
+                class="btn single-product__buy-collection-btn fw500">Buy Image</button>
             <button type="button" id="add-button" value="{{product.id}}" class="btn btn-light fw500">Add to
                 Favorites</button>
         </div>
@@ -47,7 +46,7 @@
 
         <div class="row">
             {% for image in product.product_image.all %}
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-12 col-md-12">
                 <a class="lightbox" href="{{ image.image.url }}">
                     {% if image.is_feature %}
                     <img class="img-fluid mx-auto d-block" alt="Responsive image" src="{{ image.image.url }}"
@@ -59,6 +58,9 @@
                 </a>
             </div>
             {% endfor %}
+        </div>
+        <div class="row">
+     <p>{{ product.description }}</p>
         </div>
 
     </div>

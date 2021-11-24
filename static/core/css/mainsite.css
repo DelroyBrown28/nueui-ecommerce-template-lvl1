@@ -122,6 +122,15 @@ THE HOME PAGE
     background-color: #EBECF2;
 }
 
+.home-page__catgeory-tags-container {
+    width: 100%;
+}
+
+.home-page__category-tags {
+    border: 1px solid #000;
+    color: #000;
+}
+
 
 .home-page__top-banner {
     background-color: #DFEDF2;
@@ -471,6 +480,29 @@ footer .quick-links {
     padding: 2rem 0;
 }
 
+
+/* 
+=================
+ORDER PLACED PAGE
+=================
+*/
+
+
+.orderplaced__container {
+    height: calc(100vh - 391.75px);
+    text-align: center;
+}
+
+
+/* 
+==================
+THE DASHBOARD PAGE
+==================
+*/
+
+.sub-base__container {
+    height: calc(100vh - 391.75px);
+}
 
 /* 
 ================

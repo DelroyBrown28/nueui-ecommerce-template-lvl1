@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import URLField
 from djrichtextfield.models import RichTextField
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
@@ -70,6 +71,7 @@ class Product(models.Model):
     description = models.TextField(verbose_name=_(
         "description"), help_text=_("Not Required"), blank=True)
     slug = models.SlugField(max_length=255)
+    link_to_image = models.URLField(max_length=350, default='')
     regular_price = models.DecimalField(
         verbose_name=_("Regular price"),
         help_text=_("Maximum 999.99"),
@@ -92,6 +94,7 @@ class Product(models.Model):
         max_digits=5,
         decimal_places=2,
     )
+    is_collection = models.BooleanField(default=False)
     is_active = models.BooleanField(
         verbose_name=_("Product visibility"),
         help_text=_("Change product visibility"),
